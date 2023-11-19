@@ -1,0 +1,18 @@
+server:
+  port: ${PORT}
+
+ead:
+  service-registry:
+    username: ${EUREKA_USERNAME}
+    password: ${EUREKA_PASSWORD}
+    authority: ${EUREKA_AUTHORITY}
+
+eureka:
+  client:
+    register-with-eureka: false #This line prevents eureka to auto register
+    fetch-registry: false #It won't fetch its own registration in eureka
+    service-url:
+      default-zone: ${EUREKA_URL}
+  instance:
+    hostname: ${APP_DOMAIN_NAME}
+    non-secure-port: 80
