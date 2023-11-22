@@ -3,9 +3,9 @@ server:
 
 ead:
   service-registry:
-    username: ${EUREKA_USERNAME}
-    password: ${EUREKA_PASSWORD}
-    authority: ${EUREKA_AUTHORITY}
+    username: ${EUREKA_USERNAME_PROD}
+    password: ${EUREKA_PASSWORD_PROD}
+    authority: ${EUREKA_AUTHORITY_PROD}
 
 eureka:
   client:
