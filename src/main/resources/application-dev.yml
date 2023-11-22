@@ -8,20 +8,22 @@ ead:
     authority: 'ROLE_ADMIN'
 
 spring:
-  h2:
-    console:
-      enabled: true
-      path: /h2-ui
+  #Datasource
   datasource:
-    url: jdbc:h2:file:./testdb
-    username: sa
-    password: password
-    driverClassName: org.h2.Driver
+    url: "jdbc:postgresql://localhost:5432/ead-service-registry?currentSchema=sc_service_registry&autoreconnect=true"
+    username: edersonjseder
+    password: Postgres1756
+    driver-class-name: org.postgresql.Driver
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
     show-sql: true
     hibernate:
       ddl-auto: update
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      jdbc:
+        lob:
+          non-contextual-creation: true
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 
 #This config won't be in production
 eureka:
