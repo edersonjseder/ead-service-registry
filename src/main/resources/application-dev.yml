@@ -7,6 +7,22 @@ ead:
     password: 'ead123sr'
     authority: 'ROLE_ADMIN'
 
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2-ui
+  datasource:
+    url: jdbc:h2:file:./testdb
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
 #This config won't be in production
 eureka:
   client:
